@@ -11,6 +11,11 @@
 
 ;;; Core
 
+;; File to store customization information
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
 ;; Make sure the coding system is utf-8
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
