@@ -22,6 +22,9 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+;; Frame title
+(setq frame-title-format '(buffer-file-name "%f" ("%b")))
+
 (require 'cl) ; Common Lisp functions and macros
 
 ;;; Packages
