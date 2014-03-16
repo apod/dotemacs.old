@@ -3,7 +3,7 @@
 ;;; Core
 
 ;; File to store customization information
-(setq custom-file (concat user-emacs-directory "custom.el"))
+(setq custom-file (concat user-emacs-directory "customizations.el"))
 (when (file-exists-p custom-file)
   (load custom-file))
 
