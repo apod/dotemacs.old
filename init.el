@@ -8,3 +8,11 @@
 
 ;; Font
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11"))
+
+;;; Core
+
+;; Make sure the coding system is utf-8
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
