@@ -41,3 +41,11 @@
 ;; Use monokai if installed for default theme
 (if (package-installed-p 'monokai-theme)
     (load-theme 'monokai t))
+
+;;; Whitespace
+
+;; Don't use tab character for indentation
+(setq-default indent-tabs-mode nil)
+
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
