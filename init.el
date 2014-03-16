@@ -1,17 +1,5 @@
 ;;; init.el
 
-;;; Interface
-
-;; Turn off menu-bar, tool-bar, scroll-bar, blink-cursor modes
-(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
-  (when (fboundp mode) (funcall mode -1)))
-
-;; Font
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11"))
-
-;; Inhibit startup screen
-(setq inhibit-startup-screen t)
-
 ;;; Core
 
 ;; File to store customization information
@@ -32,6 +20,18 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (require 'cl) ; Common Lisp functions and macros
+
+;;; Interface
+
+;; Turn off menu-bar, tool-bar, scroll-bar, blink-cursor modes
+(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
+  (when (fboundp mode) (funcall mode -1)))
+
+;; Font
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11"))
+
+;; Inhibit startup screen
+(setq inhibit-startup-screen t)
 
 ;;; Packages
 
