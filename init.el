@@ -9,6 +9,9 @@
 ;; Font
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11"))
 
+;; Inhibit startup screen
+(setq inhibit-startup-screen t)
+
 ;;; Core
 
 ;; File to store customization information
