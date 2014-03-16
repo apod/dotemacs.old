@@ -25,6 +25,9 @@
 ;; Frame title
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
 
+;; Answer questions with y or n
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (require 'cl) ; Common Lisp functions and macros
 
 ;;; Packages
