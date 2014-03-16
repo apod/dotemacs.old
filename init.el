@@ -32,3 +32,9 @@
 
 (setq package-enable-at-startup nil)
 (package-initialize)
+
+;;; Theme
+
+;; Use monokai if installed for default theme
+(if (package-installed-p 'monokai-theme)
+    (load-theme 'monokai t))
