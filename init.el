@@ -19,3 +19,10 @@
 
 (require 'cl) ; Common Lisp functions and macros
 
+;;; Packages
+
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(package-initialize)
