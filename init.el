@@ -2,6 +2,7 @@
 
 ;;; Interface
 
-;; Turn off menu-bar, tool-bar, scroll-bar modes
-(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
+;; Turn off menu-bar, tool-bar, scroll-bar, blink-cursor modes
+(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
   (when (fboundp mode) (funcall mode -1)))
+
