@@ -16,3 +16,6 @@
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
+(require 'cl) ; Common Lisp functions and macros
+
