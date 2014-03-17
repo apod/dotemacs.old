@@ -33,6 +33,9 @@
 ;; Font
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11"))
 
+;; Highlight current line
+(global-hl-line-mode t)
+
 ;; Inhibit startup screen
 (setq inhibit-startup-screen t)
 
