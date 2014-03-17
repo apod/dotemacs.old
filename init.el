@@ -7,7 +7,7 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-;; Store all backup files on backups/
+;; Store all backup files on backups directory
 (setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
 
 ;; Make sure the coding system is utf-8
@@ -23,6 +23,13 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (require 'cl) ; Common Lisp functions and macros
+
+;; Meaningful names for buffers with the same name
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward
+      uniquify-separator "/"
+      uniquify-ignore-buffers-re "^\\*" ; ignore special buffers
+      uniquify-after-kill-buffer-p t)
 
 ;;; Interface
 
