@@ -2,6 +2,9 @@
 
 ;;; Core
 
+(defvar ap-cache-dir (expand-file-name ".cache" user-emacs-directory)
+  "This directory stores cached content: auto-generated files, save files, history-files etc.")
+
 ;; File to store customization information
 (setq custom-file (expand-file-name "customizations.el" user-emacs-directory))
 (when (file-exists-p custom-file)
@@ -76,3 +79,22 @@
 
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace t)
+
+;;; ido-mode
+(require 'ido)
+(ap-ensure-package 'flx-ido)
+
+(setq ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-default-file-method 'selected-window
+      ido-auto-merge-work-directories-length -1
+      ido-save-directory-list-file (expand-file-name "ido.last" ap-cache-dir))
+
+(ido-mode t)
+(ido-everywhere t)
+
+(flx-ido-mode t)
+
+;; Disable ido faces to see flx highlights
+(setq ido-use-faces nil)
