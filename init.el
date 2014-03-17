@@ -46,17 +46,28 @@
 ;;; Packages
 
 (require 'package)
+
+;; Add melpa package archive
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+;; Activate installed packages now
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+;; Helper function to ensure a package is installed
+(defun ap-ensure-package (package)
+  "Ensure that a package is installed, if not install it."
+  (unless (package-installed-p package)
+    (unless (assoc package package-archive-contents)
+      (package-refresh-contents))
+    (package-install package)))
+
 ;;; Theme
 
-;; Use monokai if installed for default theme
-(if (package-installed-p 'monokai-theme)
-    (load-theme 'monokai t))
+;; Monokai
+(ap-ensure-package 'monokai-theme)
+(load-theme 'monokai t)
 
 ;;; Whitespace
 
