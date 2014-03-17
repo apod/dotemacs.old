@@ -3,9 +3,12 @@
 ;;; Core
 
 ;; File to store customization information
-(setq custom-file (concat user-emacs-directory "customizations.el"))
+(setq custom-file (expand-file-name "customizations.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
+
+;; Store all backup files on backups/
+(setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
 
 ;; Make sure the coding system is utf-8
 (set-terminal-coding-system 'utf-8)
