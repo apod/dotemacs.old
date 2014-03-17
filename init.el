@@ -30,9 +30,6 @@
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
   (when (fboundp mode) (funcall mode -1)))
 
-;; Font
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11"))
-
 ;; Highlight current line
 (global-hl-line-mode t)
 
