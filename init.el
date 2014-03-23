@@ -5,6 +5,10 @@
 (defvar ap-cache-dir (expand-file-name ".cache" user-emacs-directory)
   "This directory stores cached content: auto-generated files, save files, history-files etc.")
 
+;; Create cache dir
+(unless (file-exists-p ap-cache-dir)
+  (make-directory ap-cache-dir))
+
 ;; File to store customization information
 (setq custom-file (expand-file-name "customizations.el" user-emacs-directory))
 (when (file-exists-p custom-file)
