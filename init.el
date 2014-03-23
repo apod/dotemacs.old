@@ -38,6 +38,9 @@
       uniquify-ignore-buffers-re "^\\*" ; ignore special buffers
       uniquify-after-kill-buffer-p t)
 
+;; Show matching parens
+(show-paren-mode t)
+
 ;;; Interface
 
 ;; Turn off menu-bar, tool-bar, scroll-bar, blink-cursor modes
