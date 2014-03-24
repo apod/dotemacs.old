@@ -104,6 +104,14 @@
 (setq save-place-file (expand-file-name "saveplace" ap-cache-directory))
 (setq-default save-place t)
 
+;; Save minibuffer history
+(require 'savehist)
+(setq savehist-file (expand-file-name "savehist" ap-cache-directory)
+      savehist-additional-variables '(search ring regexp-search-ring)
+      savehist-autosave-interval 60)
+(setq-default history-length 1000)
+(savehist-mode t)
+
 ;;; Interface
 
 ;; Highlight current line
