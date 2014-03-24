@@ -51,6 +51,9 @@
       (expand-file-name ".saves-"
                         (expand-file-name "auto-save-list" ap-cache-directory)))
 
+;; Revert buffer if the file was changed
+(global-auto-revert-mode t)
+
 ;; Make sure the coding system is utf-8
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
