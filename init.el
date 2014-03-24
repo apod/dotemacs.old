@@ -92,7 +92,10 @@
 (require 'linum-relative)
 
 ;; Line number format
-(setq linum-relative-format "%3s ")
+(setq linum-relative-format "%4s ")
+
+;; Show current line number on current line
+(setq linum-relative-current-symbol "")
 
 ;; Enable linum mode globally
 (global-linum-mode t)
