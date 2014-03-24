@@ -169,7 +169,7 @@
 ;; Use Ido for all buffer/file reading
 (ido-everywhere t)
 
-;; flx-ido
+;; flx-ido, fuzzy ido
 (ap-ensure-package 'flx-ido)
 
 (defun ap/setup-ido ()
@@ -188,6 +188,10 @@
           (flx-ido-mode t))))))
 
 (add-hook 'ido-setup-hook 'ap/setup-ido)
+
+;; ido-ubiquitous, use ido everywhere
+(ap-ensure-package 'ido-ubiquitous)
+(ido-ubiquitous-mode t)
 
 ;;; smex, M-x enchancement
 (ap-ensure-package 'smex)
