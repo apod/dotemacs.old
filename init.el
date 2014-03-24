@@ -99,6 +99,11 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position t)
 
+;; Save last cursor position
+(require 'saveplace)
+(setq save-place-file (expand-file-name "saveplace" ap-cache-directory))
+(setq-default save-place t)
+
 ;;; Interface
 
 ;; Highlight current line
