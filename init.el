@@ -79,6 +79,11 @@
 ;; Lower the delay for displaying keystrokes in minibuffer
 (setq echo-keystrokes 0.1)
 
+;; Scrolling
+(setq scroll-margin 3
+      scroll-conservatively 100000
+      scroll-preserve-screen-position t)
+
 ;;; Interface
 
 ;; Highlight current line
