@@ -23,8 +23,18 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-;; Frame title
-(setq frame-title-format '(buffer-file-name "%f" ("%b")))
+;; Frame title, format: "buffer_name (file_path) - invocation_name"
+(setq-default frame-title-format
+              '(:eval (format "%s %s %s"
+                              (buffer-name)
+                              (cond
+                               (buffer-file-truename
+                                (concat "(" buffer-file-truename ")"))
+                               (dired-directory
+                                (concat "{" dired-directory "}"))
+                               (t
+                                "[no file]"))
+                              (concat "- " invocation-name))))
 
 ;; Answer questions with y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
