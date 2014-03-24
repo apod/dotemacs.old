@@ -51,6 +51,9 @@
 ;; Show matching parens
 (show-paren-mode t)
 
+;; Lower the delay for displaying keystrokes in minibuffer
+(setq echo-keystrokes 0.1)
+
 ;;; Interface
 
 ;; Turn off menu-bar, tool-bar, scroll-bar, blink-cursor modes
