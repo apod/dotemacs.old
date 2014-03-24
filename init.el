@@ -85,6 +85,9 @@
 ;; Show matching parens
 (show-paren-mode t)
 
+;; Delete selection on key press
+(delete-selection-mode t)
+
 ;; Lower the delay for displaying keystrokes in minibuffer
 (setq echo-keystrokes 0.1)
 
@@ -102,6 +105,7 @@
 (setq inhibit-startup-screen t)
 
 ;;; Line numbers
+
 (ap-ensure-package 'linum-relative)
 (require 'linum-relative)
 
