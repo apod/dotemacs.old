@@ -27,12 +27,12 @@
 
 ;;; Core
 
-(defvar ap-cache-dir (expand-file-name ".cache" user-emacs-directory)
+(defvar ap-cache-directory (expand-file-name ".cache" user-emacs-directory)
   "This directory stores cached content: auto-generated files, save files, history-files etc.")
 
 ;; Create cache dir
-(unless (file-exists-p ap-cache-dir)
-  (make-directory ap-cache-dir))
+(unless (file-exists-p ap-cache-directory)
+  (make-directory ap-cache-directory))
 
 ;; File to store customization information
 (setq custom-file (expand-file-name "customizations.el" user-emacs-directory))
@@ -40,7 +40,16 @@
   (load custom-file))
 
 ;; Store all backup files on backups directory
-(setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
+(defvar ap-backup-directory (expand-file-name "backups" ap-cache-directory)
+  "This directory stores file backups and auto saves")
+
+(setq backup-directory-alist
+      `((".*" . ,ap-backup-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,(expand-file-name "\\1" ap-backup-directory) t)))
+(setq auto-save-list-file-prefix
+      (expand-file-name ".saves-"
+                        (expand-file-name "auto-save-list" ap-cache-directory)))
 
 ;; Make sure the coding system is utf-8
 (set-terminal-coding-system 'utf-8)
@@ -125,7 +134,7 @@
 (setq ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
       ido-default-file-method 'selected-window
-      ido-save-directory-list-file (expand-file-name "ido.last" ap-cache-dir))
+      ido-save-directory-list-file (expand-file-name "ido.last" ap-cache-directory))
 
 (ido-mode t)
 
