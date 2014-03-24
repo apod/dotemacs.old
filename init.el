@@ -119,3 +119,9 @@
           (flx-ido-mode t))))))
 
 (add-hook 'ido-setup-hook 'ap/setup-ido)
+
+;;; Mode line
+
+;; Show column number
+(column-number-mode t)
+(size-indication-mode t)
