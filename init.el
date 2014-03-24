@@ -39,8 +39,8 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-;; Store all backup files on backups directory
-(defvar ap-backup-directory (expand-file-name "backups" ap-cache-directory)
+;; Store backup files on .cache directory
+(defvar ap-backup-directory (expand-file-name "backup" ap-cache-directory)
   "This directory stores file backups and auto saves")
 
 (setq backup-directory-alist
