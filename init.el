@@ -81,35 +81,21 @@
 
 ;;; Interface
 
-;; Turn off menu-bar, tool-bar, scroll-bar, blink-cursor modes
-(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
-  (when (fboundp mode) (funcall mode -1)))
-
 ;; Highlight current line
 (global-hl-line-mode t)
 
 ;; Inhibit startup screen
 (setq inhibit-startup-screen t)
 
-;;; Packages
+;;; Line numbers
+(ap-ensure-package 'linum-relative)
+(require 'linum-relative)
 
-(require 'package)
+;; Line number format
+(setq linum-relative-format "%3s ")
 
-;; Add melpa package archive
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-;; Activate installed packages now
-(setq package-enable-at-startup nil)
-(package-initialize)
-
-;; Helper function to ensure a package is installed
-(defun ap-ensure-package (package)
-  "Ensure that a package is installed, if not install it."
-  (unless (package-installed-p package)
-    (unless (assoc package package-archive-contents)
-      (package-refresh-contents))
-    (package-install package)))
+;; Enable linum mode globally
+(global-linum-mode t)
 
 ;;; Theme
 
