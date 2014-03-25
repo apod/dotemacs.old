@@ -1,5 +1,7 @@
 ;;; init.el
 
+;;; Early configuration
+
 ;; Turn off interface early to avoid momentary display
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
@@ -7,34 +9,27 @@
 ;; Reduce the frequency of garbage collection
 (setq gc-cons-threshold 50000000)
 
-;;; Packages
+;;; Directories configuration
 
-(require 'package)
-
-;; Add melpa package archive
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-;; Activate installed packages now
-(setq package-enable-at-startup nil)
-(package-initialize)
-
-;; Helper function to ensure a package is installed
-(defun ap-ensure-package (package)
-  "Ensure that a package is installed, if not install it."
-  (unless (package-installed-p package)
-    (unless (assoc package package-archive-contents)
-      (package-refresh-contents))
-    (package-install package)))
-
-
-;;; Core
 (defvar ap-cache-directory (expand-file-name ".cache" user-emacs-directory)
-  "This directory stores cached content: auto-generated files, save files, history-files etc.")
-
-;; Create cache dir
+  "This directory stores cached content: auto-generated files, save files,
+ history-files etc.")
 (unless (file-exists-p ap-cache-directory)
   (make-directory ap-cache-directory))
+
+(defvar ap-backup-directory (expand-file-name "backup" ap-cache-directory)
+  "This directory stores file backups and auto saves.")
+
+(defvar ap-config-directory (expand-file-name "config" user-emacs-directory)
+  "This directory contains all the module configurations.")
+
+;; Add config directory to load-path
+(add-to-list 'load-path ap-config-directory)
+
+;;; Modules
+(require 'ap-packages)
+
+;;; Core
 
 ;; File to store customization information
 (setq custom-file (expand-file-name "customizations.el" user-emacs-directory))
@@ -42,9 +37,6 @@
   (load custom-file))
 
 ;; Store backup files on .cache directory
-(defvar ap-backup-directory (expand-file-name "backup" ap-cache-directory)
-  "This directory stores file backups and auto saves")
-
 (setq backup-directory-alist
       `((".*" . ,ap-backup-directory)))
 (setq auto-save-file-name-transforms
@@ -77,8 +69,6 @@
 
 ;; Answer questions with y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
-
-(require 'cl) ; Common Lisp functions and macros
 
 ;; Meaningful names for buffers with the same name
 (require 'uniquify)
