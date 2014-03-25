@@ -1,5 +1,8 @@
-;;; ap-global-keybindings
+;;; ap-global-keybindings.el
 ;;; Global keybindings
+
+;; Replace buffer list with ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Swap isearch with the regexp equivalents
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
