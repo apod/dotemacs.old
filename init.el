@@ -28,6 +28,7 @@
 
 ;;; Modules
 (require 'ap-packages)
+(require 'ap-appearance)
 (require 'ap-mode-line)
 (require 'ap-whitespace)
 (require 'ap-global-keybindings)
@@ -59,19 +60,6 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-;; Frame title, format: "buffer_name (file_path) - invocation_name"
-(setq-default frame-title-format
-              '(:eval (format "%s %s %s"
-                              (buffer-name)
-                              (cond
-                               (buffer-file-truename
-                                (concat "(" buffer-file-truename ")"))
-                               (dired-directory
-                                (concat "{" dired-directory "}"))
-                               (t
-                                "[no file]"))
-                              (concat "- " invocation-name))))
-
 ;; Answer questions with y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -82,11 +70,6 @@
       uniquify-ignore-buffers-re "^\\*" ; ignore special buffers
       uniquify-after-kill-buffer-p t)
 
-;; Show matching parens
-(show-paren-mode t)
-
-;; Disable blinking cursor
-(blink-cursor-mode -1)
 
 ;; Delete selection on key press
 (delete-selection-mode t)
@@ -114,28 +97,5 @@
 
 ;;; Interface
 
-;; Highlight current line
-(global-hl-line-mode t)
-
 ;; Inhibit startup screen
 (setq inhibit-startup-screen t)
-
-;;; Line numbers
-
-(ap-ensure-package 'linum-relative)
-(require 'linum-relative)
-
-;; Line number format
-(setq linum-relative-format "%4s ")
-
-;; Show current line number on current line
-(setq linum-relative-current-symbol "")
-
-;; Enable linum mode globally
-(global-linum-mode t)
-
-;;; Theme
-
-;; Monokai
-(ap-ensure-package 'monokai-theme)
-(load-theme 'monokai t)
