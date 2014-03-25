@@ -29,6 +29,7 @@
 ;;; Modules
 (require 'ap-packages)
 (require 'ap-mode-line)
+(require 'ap-whitespace)
 (require 'ap-global-keybindings)
 (require 'ap-ido)
 (require 'ap-smex)
@@ -138,11 +139,3 @@
 ;; Monokai
 (ap-ensure-package 'monokai-theme)
 (load-theme 'monokai t)
-
-;;; Whitespace
-
-;; Don't use tab character for indentation
-(setq-default indent-tabs-mode nil)
-
-;; Show trailing whitespace
-(setq-default show-trailing-whitespace t)
