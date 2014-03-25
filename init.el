@@ -29,6 +29,7 @@
 ;;; Modules
 (require 'ap-packages)
 (require 'ap-mode-line)
+(require 'ap-smex)
 
 ;;; Core
 
@@ -188,15 +189,3 @@
 ;; ido-ubiquitous, use ido everywhere
 (ap-ensure-package 'ido-ubiquitous)
 (ido-ubiquitous-mode t)
-
-;;; smex, M-x enchancement
-(ap-ensure-package 'smex)
-(require 'smex)
-(setq smex-save-file (expand-file-name ".smex-items" ap-cache-directory))
-(smex-initialize)
-
-;; Replace M-x with smex
-(global-set-key (kbd "M-x") 'smex)
-
-;; M-X show commands relevant to the active major mode
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
