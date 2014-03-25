@@ -4,6 +4,9 @@
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
   (when (fboundp mode) (funcall mode -1)))
 
+;; Reduce the frequency of garbage collection
+(setq gc-cons-threshold 50000000)
+
 ;;; Packages
 
 (require 'package)
@@ -26,7 +29,6 @@
 
 
 ;;; Core
-
 (defvar ap-cache-directory (expand-file-name ".cache" user-emacs-directory)
   "This directory stores cached content: auto-generated files, save files, history-files etc.")
 
