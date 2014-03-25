@@ -29,6 +29,7 @@
 ;;; Modules
 (require 'ap-packages)
 (require 'ap-mode-line)
+(require 'ap-global-keybindings)
 (require 'ap-smex)
 
 ;;; Core
@@ -108,14 +109,6 @@
       savehist-autosave-interval 60)
 (setq-default history-length 1000)
 (savehist-mode t)
-
-;;; Keybindings
-
-;; Swap isearch with the regexp equivalents
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
 
 ;;; Interface
 
