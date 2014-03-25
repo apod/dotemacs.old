@@ -1,7 +1,7 @@
 ;;; init.el
 
 ;; Turn off interface early to avoid momentary display
-(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode blink-cursor-mode))
+(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
 ;; Reduce the frequency of garbage collection
@@ -89,6 +89,9 @@
 
 ;; Show matching parens
 (show-paren-mode t)
+
+;; Disable blinking cursor
+(blink-cursor-mode -1)
 
 ;; Delete selection on key press
 (delete-selection-mode t)
