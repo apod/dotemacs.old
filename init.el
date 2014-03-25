@@ -28,6 +28,7 @@
 
 ;;; Modules
 (require 'ap-packages)
+(require 'ap-mode-line)
 
 ;;; Core
 
@@ -199,9 +200,3 @@
 
 ;; M-X show commands relevant to the active major mode
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-
-;;; Mode line
-
-;; Show column number
-(column-number-mode t)
-(size-indication-mode t)

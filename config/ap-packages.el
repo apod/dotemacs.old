@@ -1,4 +1,5 @@
 ;;; ap-packages.el
+;;; Package system configuration
 
 (require 'package)
 
