@@ -23,6 +23,11 @@
 (defvar ap-config-directory (expand-file-name "config" user-emacs-directory)
   "This directory contains all the module configurations.")
 
+(defvar ap-local-directory (expand-file-name "local" user-emacs-directory)
+  "This directory contains all the local machine configurations.")
+(unless (file-exists-p ap-local-directory)
+  (make-directory ap-local-directory))
+
 ;; Add config directory to load-path
 (add-to-list 'load-path ap-config-directory)
 
@@ -36,7 +41,9 @@
 (require 'ap-ido)
 (require 'ap-smex)
 
-;; File to store customization information
-(setq custom-file (expand-file-name "customizations.el" user-emacs-directory))
-(when (file-exists-p custom-file)
-  (load custom-file))
+;; File to store the config changes made through customize ui
+(setq custom-file (expand-file-name "customizations.el" ap-local-directory))
+
+;; Load local machine configurations
+(when (file-exists-p ap-local-directory)
+  (mapc 'load (directory-files ap-local-directory 't "^[^#].*el$")))
