@@ -40,6 +40,7 @@
 (require 'ap-global-keybindings)
 (require 'ap-ido)
 (require 'ap-smex)
+(require 'ap-evil)
 
 ;; File to store the config changes made through customize ui
 (setq custom-file (expand-file-name "customizations.el" ap-local-directory))
