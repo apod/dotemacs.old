@@ -5,6 +5,6 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Show trailing whitespace
-(setq-default show-trailing-whitespace t)
+;; (setq-default show-trailing-whitespace t)
 
 (provide 'ap-whitespace)
