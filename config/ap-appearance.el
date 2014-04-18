@@ -8,7 +8,7 @@
 (show-paren-mode t)
 
 ;; Highlight current line
-(global-hl-line-mode t)
+;; (global-hl-line-mode t)
 
 ;; Frame title, format: "buffer_name (file_path) - invocation_name"
 (setq-default frame-title-format
