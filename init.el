@@ -43,7 +43,7 @@
 (require 'ap-evil)
 
 ;; File to store the config changes made through customize ui
-(setq custom-file (expand-file-name "customizations.el" ap-local-directory))
+(setq custom-file (expand-file-name "custom.el" ap-local-directory))
 
 ;; Load local machine configurations
 (when (file-exists-p ap-local-directory)
