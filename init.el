@@ -41,6 +41,7 @@
 (require 'ap-ido)
 (require 'ap-smex)
 (require 'ap-evil)
+(require 'ap-smartparens)
 
 (require 'ap-haskell)
 ;; File to store the config changes made through customize ui
