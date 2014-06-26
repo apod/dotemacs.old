@@ -41,7 +41,8 @@
 
 ;; Use M+ if available
 (when (member "M+ 1mn" (font-family-list))
-  (set-face-attribute 'default nil :font "M+ 1mn-11"))
+  (set-face-attribute 'default nil :font "M+ 1mn-11")
+  (set-face-attribute 'variable-pitch nil :font "M+ 1mn-11"))
 
 ;;; Themes
 (ap-ensure-package 'monokai-theme)
