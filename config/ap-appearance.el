@@ -50,5 +50,14 @@
 ;; Load theme
 (load-theme 'monokai t)
 
+;; Reset the height scale to 1.0 for org levels 1-4 (set by monokai theme)
+(apply 'custom-set-faces 
+       (mapcar (lambda (level) 
+                 `(,(intern (concat "org-level-" (number-to-string level))) ((t (:height 1.0))))) 
+               (number-sequence 1 4)))
+
+;; Change the link color
+(custom-set-faces '(org-link ((t (:foreground "deep sky blue" :underline "deep sky blue")))))
+
 (provide 'ap-appearance)
 
