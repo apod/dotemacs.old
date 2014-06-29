@@ -3,9 +3,10 @@
 
 (require 'package)
 
-;; Add melpa package archive
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;; Set package archive repositories
+(setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("org" . "http://orgmode.org/elpa/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")))
 
 ;; Activate installed packages now
 (setq package-enable-at-startup nil)
