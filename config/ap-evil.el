@@ -16,19 +16,19 @@
 ;;; Keybindings
 
 ;; Partial functionality from vim-unimpaired
-(defun ap-blank-line-above ()
+(defun ap-newline-above ()
   (interactive)
   (save-excursion 
     (beginning-of-line)
     (newline)))
 
-(defun ap-blank-line-below ()
+(defun ap-newline-below ()
   (interactive)
   (save-excursion 
     (end-of-line)
     (newline)))
 
-(define-key evil-normal-state-map "] " 'ap-blank-line-below) ; ]<space>
-(define-key evil-normal-state-map "[ " 'ap-blank-line-above) ; [<space>
+(define-key evil-normal-state-map "] " 'ap-newline-below) ; ]<space>
+(define-key evil-normal-state-map "[ " 'ap-newline-above) ; [<space>
 
 (provide 'ap-evil)
