@@ -24,9 +24,10 @@
 ;; Partial functionality from vim-unimpaired
 (defun ap-newline-above ()
   (interactive)
-  (save-excursion 
+  (let ((column (current-column)))
     (beginning-of-line)
-    (newline)))
+    (newline)
+    (forward-char column)))
 
 (defun ap-newline-below ()
   (interactive)
