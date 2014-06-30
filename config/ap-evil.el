@@ -38,4 +38,22 @@
 (define-key evil-normal-state-map "] " 'ap-newline-below) ; ]<space>
 (define-key evil-normal-state-map "[ " 'ap-newline-above) ; [<space>
 
+(defun ap-move-line-above ()
+  (interactive)
+  (let ((column (current-column)))
+    (transpose-lines 1)
+    (forward-line -2)
+    (forward-char column)))
+
+(defun ap-move-line-below ()
+  (interactive)
+  (let ((column (current-column)))
+    (forward-line 1)
+    (transpose-lines 1)
+    (forward-line -1)
+    (forward-char column)))
+
+(define-key evil-normal-state-map "]e" 'ap-move-line-below)
+(define-key evil-normal-state-map "[e" 'ap-move-line-above)
+
 (provide 'ap-evil)
