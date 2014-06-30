@@ -15,6 +15,12 @@
 
 ;;; Keybindings
 
+;; Remap j/k to work like gj/gk and vice versa
+(define-key evil-normal-state-map "gj" 'evil-next-line)
+(define-key evil-normal-state-map "gk" 'evil-previous-line)
+(define-key evil-normal-state-map "j" 'evil-next-visual-line)
+(define-key evil-normal-state-map "k" 'evil-previous-visual-line)
+
 ;; Partial functionality from vim-unimpaired
 (defun ap-newline-above ()
   (interactive)
