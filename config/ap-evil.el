@@ -27,6 +27,10 @@
 (define-key evil-motion-state-map (kbd "gj") 'evil-next-line)
 (define-key evil-motion-state-map (kbd "gk") 'evil-previous-line)
 
+;; Remap H, L to ^, g_
+(define-key evil-motion-state-map (kbd "H")  'evil-first-non-blank)
+(define-key evil-motion-state-map (kbd "L")  'evil-last-non-blank)
+
 ;; Remap Y to y$
 (define-key evil-normal-state-map (kbd "Y") (kbd "y$"))
 
