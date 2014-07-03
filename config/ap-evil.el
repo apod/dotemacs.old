@@ -4,14 +4,20 @@
 (ap-ensure-package 'evil)
 (ap-ensure-package 'evil-surround)
 (ap-ensure-package 'evil-visualstar)
+(ap-ensure-package 'evil-numbers)
 
 (require 'evil)
 (require 'evil-surround)
 (require 'evil-visualstar)
 
 (evil-mode t)
+
+;; evil-surround
 (global-evil-surround-mode t)
 
+;; evil-numbers
+(define-key evil-normal-state-map (kbd "C--") 'evil-numbers/dec-at-pt)
+(define-key evil-normal-state-map (kbd "C-+") 'evil-numbers/inc-at-pt)
 
 ;;; Keybindings
 
