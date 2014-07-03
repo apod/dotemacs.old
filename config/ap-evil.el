@@ -16,13 +16,13 @@
 ;;; Keybindings
 
 ;; Remap j/k to work on visual lines and gj/gk on actual lines
-(define-key evil-normal-state-map "j"  'evil-next-visual-line)
-(define-key evil-normal-state-map "k"  'evil-previous-visual-line)
-(define-key evil-normal-state-map "gj" 'evil-next-line)
-(define-key evil-normal-state-map "gk" 'evil-previous-line)
+(define-key evil-normal-state-map (kbd "j")  'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "k")  'evil-previous-visual-line)
+(define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
+(define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
 
 ;; Remap Y to y$
-(define-key evil-normal-state-map "Y" (kbd "y$"))
+(define-key evil-normal-state-map (kbd "Y") (kbd "y$"))
 
 ;; Partial functionality from vim-unimpaired
 (defun ap-newline-above ()
@@ -38,8 +38,8 @@
     (end-of-line)
     (newline)))
 
-(define-key evil-normal-state-map "] " 'ap-newline-below) ; ]<space>
-(define-key evil-normal-state-map "[ " 'ap-newline-above) ; [<space>
+(define-key evil-normal-state-map (kbd "] SPC") 'ap-newline-below) ; ]<space>
+(define-key evil-normal-state-map (kbd "[ SPC") 'ap-newline-above) ; [<space>
 
 (defun ap-move-line-above ()
   (interactive)
@@ -56,7 +56,7 @@
     (forward-line -1)
     (forward-char column)))
 
-(define-key evil-normal-state-map "]e" 'ap-move-line-below)
-(define-key evil-normal-state-map "[e" 'ap-move-line-above)
+(define-key evil-normal-state-map (kbd "] e") 'ap-move-line-below)
+(define-key evil-normal-state-map (kbd "[ e") 'ap-move-line-above)
 
 (provide 'ap-evil)
