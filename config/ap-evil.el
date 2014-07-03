@@ -16,10 +16,10 @@
 ;;; Keybindings
 
 ;; Remap j/k to work on visual lines and gj/gk on actual lines
-(define-key evil-normal-state-map (kbd "j")  'evil-next-visual-line)
-(define-key evil-normal-state-map (kbd "k")  'evil-previous-visual-line)
-(define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
-(define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
+(define-key evil-motion-state-map (kbd "j")  'evil-next-visual-line)
+(define-key evil-motion-state-map (kbd "k")  'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "gj") 'evil-next-line)
+(define-key evil-motion-state-map (kbd "gk") 'evil-previous-line)
 
 ;; Remap Y to y$
 (define-key evil-normal-state-map (kbd "Y") (kbd "y$"))
