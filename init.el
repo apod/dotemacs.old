@@ -31,6 +31,17 @@
 ;; Add config directory to load-path
 (add-to-list 'load-path ap-config-directory)
 
+;; Prelude's advice-commands macro
+(defmacro ap-advice-commands (advice-name commands class &rest body)
+  "Apply advice named ADVICE-NAME to multiple COMMANDS.
+
+The body of the advice is in BODY."
+  `(progn
+     ,@(mapcar (lambda (command)
+                 `(defadvice ,command (,class ,(intern (concat (symbol-name command) "-" advice-name)) activate)
+                    ,@body))
+               commands)))
+
 ;;; Modules
 (require 'ap-packages)
 (require 'ap-core)
