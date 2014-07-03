@@ -21,6 +21,9 @@
 (define-key evil-normal-state-map "gj" 'evil-next-line)
 (define-key evil-normal-state-map "gk" 'evil-previous-line)
 
+;; Remap Y to y$
+(define-key evil-normal-state-map "Y" (kbd "y$"))
+
 ;; Partial functionality from vim-unimpaired
 (defun ap-newline-above ()
   (interactive)
