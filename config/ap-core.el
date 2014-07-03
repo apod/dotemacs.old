@@ -56,4 +56,7 @@
 ;; Answer questions with y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Enable automatic indentation
+(electric-indent-mode t)
+
 (provide 'ap-core)
