@@ -21,6 +21,9 @@
 
 ;;; Keybindings
 
+;; Unbind evil's normal mode M-. binding
+(define-key evil-normal-state-map (kbd "M-.") nil)
+
 ;; Remap j/k to work on visual lines and gj/gk on actual lines
 (define-key evil-motion-state-map (kbd "j")  'evil-next-visual-line)
 (define-key evil-motion-state-map (kbd "k")  'evil-previous-visual-line)
