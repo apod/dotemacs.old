@@ -44,6 +44,8 @@
 (require 'ap-smartparens)
 
 (require 'ap-haskell)
+(require 'ap-clojure)
+
 ;; File to store the config changes made through customize ui
 (setq custom-file (expand-file-name "custom.el" ap-local-directory))
 
