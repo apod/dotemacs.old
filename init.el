@@ -54,6 +54,7 @@ The body of the advice is in BODY."
 (require 'ap-evil)
 (require 'ap-smartparens)
 
+(require 'ap-emacs-lisp)
 (require 'ap-haskell)
 (require 'ap-clojure)
 
