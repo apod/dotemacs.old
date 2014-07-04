@@ -38,21 +38,21 @@
 (define-key evil-normal-state-map (kbd "Y") (kbd "y$"))
 
 ;; Partial functionality from vim-unimpaired
-(defun ap-newline-above ()
-  (interactive)
+(defun ap-newline-above (times)
+  (interactive "p")
   (let ((column (current-column)))
     (beginning-of-line)
-    (newline)
+    (newline times)
     (forward-char column)))
 
-(defun ap-newline-below ()
-  (interactive)
+(defun ap-newline-below (times)
+  (interactive "p")
   (save-excursion 
     (end-of-line)
-    (newline)))
+    (newline times)))
 
-(define-key evil-normal-state-map (kbd "] SPC") 'ap-newline-below) ; ]<space>
-(define-key evil-normal-state-map (kbd "[ SPC") 'ap-newline-above) ; [<space>
+(define-key evil-normal-state-map (kbd "] SPC") 'ap-newline-below)
+(define-key evil-normal-state-map (kbd "[ SPC") 'ap-newline-above)
 
 (defun ap-move-line-above ()
   (interactive)
