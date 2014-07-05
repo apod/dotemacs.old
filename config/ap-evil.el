@@ -72,4 +72,27 @@
 (define-key evil-normal-state-map (kbd "] e") 'ap-move-line-below)
 (define-key evil-normal-state-map (kbd "[ e") 'ap-move-line-above)
 
+;; Smartparens navigation
+(define-key evil-normal-state-map (kbd "M-l") 'sp-forward-sexp)
+(define-key evil-normal-state-map (kbd "M-h") 'sp-backward-sexp)
+(define-key evil-normal-state-map (kbd "M-j") 'sp-down-sexp)
+(define-key evil-normal-state-map (kbd "M-k") 'sp-up-sexp)
+
+;; Use s for smartparens manipulations
+(define-key evil-normal-state-map (kbd "s") nil)
+
+(define-key evil-normal-state-map (kbd "s y") 'sp-copy-sexp)
+
+(define-key evil-normal-state-map (kbd "s k") 'sp-kill-sexp)
+
+(define-key evil-normal-state-map (kbd "s t") 'sp-transpose-sexp)
+
+(define-key evil-normal-state-map (kbd "s j") 'sp-join-sexp)
+(define-key evil-normal-state-map (kbd "s s") 'sp-split-sexp)
+
+(define-key evil-normal-state-map (kbd "s h") 'sp-forward-barf-sexp)
+(define-key evil-normal-state-map (kbd "s l") 'sp-forward-slurp-sexp)
+(define-key evil-normal-state-map (kbd "s H") 'sp-backward-slurp-sexp)
+(define-key evil-normal-state-map (kbd "s L") 'sp-backward-barf-sexp)
+
 (provide 'ap-evil)
