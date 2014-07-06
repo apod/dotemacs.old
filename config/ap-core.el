@@ -53,6 +53,9 @@
 ;; Delete selection on key press
 (delete-selection-mode t)
 
+;; Don't set point position when you focus the frame
+(setq x-mouse-click-focus-ignore-position t)
+
 ;; Answer questions with y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
