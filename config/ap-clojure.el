@@ -14,8 +14,10 @@
 ;; Store cider REPL history
 (setq cider-repl-history-file (expand-file-name "cider-history" ap-cache-directory))
 
-;; Run cider REPL on emacs mode
+;; Run cider REPL on emacs state
 (add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
+(add-to-list 'evil-emacs-state-modes 'cider-doc-mode)
+(add-to-list 'evil-emacs-state-modes 'cider-stacktrace-mode)
 
 (add-hook 'clojure-mode-hook (lambda ()
                                (rainbow-delimiters-mode t)
