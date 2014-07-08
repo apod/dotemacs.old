@@ -46,6 +46,7 @@ The body of the advice is in BODY."
 (require 'ap-packages)
 (require 'ap-core)
 (require 'ap-appearance)
+(require 'ap-org)
 (require 'ap-mode-line)
 (require 'ap-whitespace)
 (require 'ap-global-keybindings)
