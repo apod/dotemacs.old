@@ -58,6 +58,7 @@ The body of the advice is in BODY."
 (require 'ap-emacs-lisp)
 (require 'ap-haskell)
 (require 'ap-clojure)
+(require 'ap-scheme)
 
 ;; File to store the config changes made through customize ui
 (setq custom-file (expand-file-name "custom.el" ap-local-directory))
