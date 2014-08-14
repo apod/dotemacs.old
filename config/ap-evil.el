@@ -6,6 +6,7 @@
 (ap-ensure-package 'evil-visualstar)
 (ap-ensure-package 'evil-numbers)
 (ap-ensure-package 'evil-nerd-commenter)
+(ap-ensure-package 'evil-exchange)
 
 (setq evilnc-hotkey-comment-operator "gc")
 
@@ -13,6 +14,7 @@
 (require 'evil-nerd-commenter)
 (require 'evil-surround)
 (require 'evil-visualstar)
+(require 'evil-exchange)
 
 (evil-mode t)
 
@@ -22,6 +24,9 @@
 ;; evil-numbers
 (define-key evil-normal-state-map (kbd "C--") 'evil-numbers/dec-at-pt)
 (define-key evil-normal-state-map (kbd "C-+") 'evil-numbers/inc-at-pt)
+
+;; evil-exchange
+(evil-exchange-install)
 
 ;;; Keybindings
 
