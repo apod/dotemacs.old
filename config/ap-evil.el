@@ -22,7 +22,8 @@
 
 (evil-leader/set-leader "\\")
 (evil-leader/set-key "ol" 'linum-mode
-                     "oh" 'whitespace-mode)
+                     "oh" 'whitespace-mode
+                     "\\" 'evil-buffer)
 
 
 (evil-mode t)
