@@ -7,6 +7,7 @@
 (ap-ensure-package 'evil-numbers)
 (ap-ensure-package 'evil-nerd-commenter)
 (ap-ensure-package 'evil-exchange)
+(ap-ensure-package 'evil-leader)
 
 (setq evilnc-hotkey-comment-operator "gc")
 
@@ -15,6 +16,14 @@
 (require 'evil-surround)
 (require 'evil-visualstar)
 (require 'evil-exchange)
+
+;; evil-leader
+(global-evil-leader-mode t)
+
+(evil-leader/set-leader "\\")
+(evil-leader/set-key "ol" 'linum-mode
+                     "oh" 'whitespace-mode)
+
 
 (evil-mode t)
 
