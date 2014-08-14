@@ -7,9 +7,6 @@
 ;; Show matching parens
 (show-paren-mode t)
 
-;; Highlight current line
-;; (global-hl-line-mode t)
-
 ;; Frame title, format: "buffer_name (file_path) - invocation_name"
 (setq-default frame-title-format
               '(:eval (format "%s %s %s"
@@ -24,7 +21,6 @@
                               (concat "- " invocation-name))))
 
 ;;; Line numbers
-
 (ap-ensure-package 'linum-relative)
 (require 'linum-relative)
 
@@ -34,8 +30,8 @@
 ;; Show current line number on current line
 (setq linum-relative-current-symbol "")
 
-;; Enable linum mode globally
-(global-linum-mode t)
+;; Enable linum mode on programming modes
+(add-hook 'prog-mode-hook 'linum-mode)
 
 ;;; Fonts
 
