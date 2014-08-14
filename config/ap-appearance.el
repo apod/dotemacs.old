@@ -37,23 +37,23 @@
 
 ;; Use M+ if available
 (when (member "M+ 1mn" (font-family-list))
-  (set-face-attribute 'default nil :font "M+ 1mn-11")
-  (set-face-attribute 'variable-pitch nil :font "M+ 1mn-11"))
+  (set-face-attribute 'default nil :font "M+ 1mn-11"))
 
 ;;; Themes
 (ap-ensure-package 'monokai-theme)
 
-;; Load theme
-(load-theme 'monokai t)
+;; Customize monokai
+(setq monokai-use-variable-pitch nil)
 
-;; Reset the height scale to 1.0 for org levels 1-4 (set by monokai theme)
-(apply 'custom-set-faces 
-       (mapcar (lambda (level) 
-                 `(,(intern (concat "org-level-" (number-to-string level))) ((t (:height 1.0))))) 
-               (number-sequence 1 4)))
+;; Reset the height font scale to 1.0 for different levels
+(dolist (level (number-sequence 1 4))
+  (set (intern (concat "monokai-height-plus-" (number-to-string level))) 1.0))
 
 ;; Change the link color
 (custom-set-faces '(org-link ((t (:foreground "deep sky blue" :underline "deep sky blue")))))
+
+;; Load theme
+(load-theme 'monokai t)
 
 (provide 'ap-appearance)
 
