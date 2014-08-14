@@ -5,8 +5,12 @@
 (ap-ensure-package 'evil-surround)
 (ap-ensure-package 'evil-visualstar)
 (ap-ensure-package 'evil-numbers)
+(ap-ensure-package 'evil-nerd-commenter)
+
+(setq evilnc-hotkey-comment-operator "gc")
 
 (require 'evil)
+(require 'evil-nerd-commenter)
 (require 'evil-surround)
 (require 'evil-visualstar)
 
