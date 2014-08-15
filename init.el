@@ -57,6 +57,7 @@ The body of the advice is in BODY."
 (require 'ap-projectile)
 
 (require 'ap-emacs-lisp)
+(require 'ap-common-lisp)
 (require 'ap-haskell)
 (require 'ap-clojure)
 (require 'ap-scheme)
