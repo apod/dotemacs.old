@@ -54,6 +54,7 @@ The body of the advice is in BODY."
 (require 'ap-smex)
 (require 'ap-evil)
 (require 'ap-smartparens)
+(require 'ap-projectile)
 
 (require 'ap-emacs-lisp)
 (require 'ap-haskell)
