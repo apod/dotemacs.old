@@ -16,7 +16,7 @@
 
 ;; Run cider REPL on emacs state
 (add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
-(add-to-list 'evil-emacs-state-modes 'cider-doc-mode)
+(add-to-list 'evil-emacs-state-modes 'cider-docview-mode)
 (add-to-list 'evil-emacs-state-modes 'cider-stacktrace-mode)
 
 (add-hook 'clojure-mode-hook (lambda ()
