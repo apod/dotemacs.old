@@ -14,8 +14,7 @@
 ;; Store cider REPL history
 (setq cider-repl-history-file (expand-file-name "cider-history" ap-cache-directory))
 
-;; Run cider REPL on emacs state
-(add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
+;; Run cider some cider modes on emacs state
 (add-to-list 'evil-emacs-state-modes 'cider-docview-mode)
 (add-to-list 'evil-emacs-state-modes 'cider-stacktrace-mode)
 
