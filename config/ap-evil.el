@@ -137,4 +137,18 @@ narrowed."
   "K" 'magit-discard-item
   "l" 'magit-key-mode-popup-logging)
 
+;; C-g works like esc
+(define-key evil-normal-state-map (kbd "C-g") 'evil-normal-state)
+(define-key evil-visual-state-map (kbd "C-g") 'evil-normal-state)
+(define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+
+;; Esc works consistently
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'abort-recursive-edit)
+(define-key minibuffer-local-ns-map [escape] 'abort-recursive-edit)
+(define-key minibuffer-local-completion-map [escape] 'abort-recursive-edit)
+(define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
+(define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
+
 (provide 'ap-evil)
