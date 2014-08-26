@@ -44,4 +44,14 @@
                           ad-do-it)
                       ad-do-it))
 
+(defun ap-cider-eval-defun-at-point-in-repl ()
+  (interactive)
+  (let ((form (cider-defun-at-point)))
+    (while (string-match "\\`\s+\\|\n+\\'" form)
+      (setq form (replace-match "" t t form)))
+    (set-buffer (cider-current-repl-buffer))
+    (goto-char (point-max))
+    (insert form)
+    (cider-repl-return)))
+
 (provide 'ap-clojure)
