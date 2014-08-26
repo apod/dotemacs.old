@@ -40,7 +40,8 @@ narrowed."
 (evil-leader/set-key "ol" 'linum-mode
                      "oh" 'whitespace-mode
                      "\\" 'evil-buffer
-                     "n"  'narrow-or-widen-dwim)
+                     "n"  'narrow-or-widen-dwim
+                     "g"  'magit-status)
 
 
 (evil-mode t)
@@ -130,5 +131,10 @@ narrowed."
 (define-key evil-normal-state-map (kbd "s l") 'sp-forward-slurp-sexp)
 (define-key evil-normal-state-map (kbd "s H") 'sp-backward-slurp-sexp)
 (define-key evil-normal-state-map (kbd "s L") 'sp-backward-barf-sexp)
+
+;; magit
+(evil-add-hjkl-bindings magit-status-mode-map 'emacs
+  "K" 'magit-discard-item
+  "l" 'magit-key-mode-popup-logging)
 
 (provide 'ap-evil)

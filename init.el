@@ -52,6 +52,7 @@ The body of the advice is in BODY."
 (require 'ap-global-keybindings)
 (require 'ap-ido)
 (require 'ap-smex)
+(require 'ap-magit)
 (require 'ap-evil)
 (require 'ap-smartparens)
 (require 'ap-projectile)
