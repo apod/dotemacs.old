@@ -43,6 +43,8 @@ narrowed."
                      "n"  'narrow-or-widen-dwim
                      "g"  'magit-status)
 
+;; * and # work on symbols instead of words
+(setq-default evil-symbol-word-search t)
 
 (evil-mode t)
 
