@@ -76,6 +76,11 @@ narrowed."
 ;; Remap Y to y$
 (define-key evil-normal-state-map (kbd "Y") (kbd "y$"))
 
+;; vim-vinegar like keybindings
+(require 'dired)
+(define-key evil-normal-state-map (kbd "-") 'dired-jump)
+(define-key dired-mode-map (kbd "-") 'dired-up-directory)
+
 ;; Partial functionality from vim-unimpaired
 (defun ap-newline-above (times)
   (interactive "p")
