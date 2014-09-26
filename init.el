@@ -62,6 +62,7 @@ The body of the advice is in BODY."
 (require 'ap-haskell)
 (require 'ap-clojure)
 (require 'ap-scheme)
+(require 'ap-sml)
 
 ;; File to store the config changes made through customize ui
 (setq custom-file (expand-file-name "custom.el" ap-local-directory))
