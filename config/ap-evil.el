@@ -122,8 +122,17 @@ narrowed."
 (define-key evil-normal-state-map (kbd "M-j") 'sp-down-sexp)
 (define-key evil-normal-state-map (kbd "M-k") 'sp-up-sexp)
 
+(defun ap-indent-defun ()
+  "Indent current defun"
+  (interactive)
+ (let ((l (save-excursion (beginning-of-defun 1) (point)))
+        (r (save-excursion (end-of-defun 1) (point))))
+    (indent-region l r)))
+
 ;; Use s for smartparens manipulations
 (define-key evil-normal-state-map (kbd "s") nil)
+
+(define-key evil-normal-state-map (kbd "s q") 'ap-indent-defun)
 
 (define-key evil-normal-state-map (kbd "s y") 'sp-copy-sexp)
 
