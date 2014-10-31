@@ -62,4 +62,8 @@
 ;; Enable automatic indentation
 (electric-indent-mode t)
 
+;; Make C-x 1 toggleable
+(ap-ensure-package 'zygospore)
+(global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+
 (provide 'ap-core)
