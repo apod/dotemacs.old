@@ -65,6 +65,7 @@ The body of the advice is in BODY."
 (require 'ap-sml)
 (require 'ap-ruby)
 (require 'ap-css)
+(require 'ap-lua)
 
 ;; File to store the config changes made through customize ui
 (setq custom-file (expand-file-name "custom.el" ap-local-directory))
