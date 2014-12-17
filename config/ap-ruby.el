@@ -3,6 +3,7 @@
 
 (ap-ensure-package 'inf-ruby)
 (ap-ensure-package 'slim-mode)
+(ap-ensure-package 'yaml-mode)
 
 ;; Treat as ruby files
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
