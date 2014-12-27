@@ -167,4 +167,9 @@ narrowed."
 (define-key minibuffer-local-must-match-map [escape] 'abort-recursive-edit)
 (define-key minibuffer-local-isearch-map [escape] 'abort-recursive-edit)
 
+;; Expand region
+(ap-ensure-package 'expand-region)
+
+(evil-define-key 'visual global-map (kbd "v") 'er/expand-region)
+
 (provide 'ap-evil)
